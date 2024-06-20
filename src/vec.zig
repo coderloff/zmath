@@ -6,52 +6,52 @@ pub const vec2 = struct {
 
     // Constructor
     pub fn init(x: f32, y: f32) vec2 {
-        return vec2{ .x = x, .y = y };
+        return .{ .x = x, .y = y };
     }
 
     // Static Methods
     pub fn up() vec2 {
-        return vec2{ .x = 0, .y = 1 };
+        return .{ .x = 0, .y = 1 };
     }
 
     pub fn down() vec2 {
-        return vec2{ .x = 0, .y = -1 };
+        return .{ .x = 0, .y = -1 };
     }
 
     pub fn left() vec2 {
-        return vec2{ .x = -1, .y = 0 };
+        return .{ .x = -1, .y = 0 };
     }
 
     pub fn right() vec2 {
-        return vec2{ .x = 1, .y = 0 };
+        return .{ .x = 1, .y = 0 };
     }
 
     pub fn zero() vec2 {
-        return vec2{ .x = 0, .y = 0 };
+        return .{ .x = 0, .y = 0 };
     }
 
     pub fn one() vec2 {
-        return vec2{ .x = 1, .y = 1 };
+        return .{ .x = 1, .y = 1 };
     }
 
     pub fn posinf() vec2 {
-        return vec2{ .x = std.math.inf(f32), .y = std.math.inf(f32) };
+        return .{ .x = std.math.inf(f32), .y = std.math.inf(f32) };
     }
 
     pub fn neginf() vec2 {
-        return vec2{ .x = -std.math.inf(f32), .y = -std.math.inf(f32) };
+        return .{ .x = -std.math.inf(f32), .y = -std.math.inf(f32) };
     }
 
     pub fn sum(a: vec2, b: vec2) vec2 {
-        return vec2{ .x = a.x + b.x, .y = a.y + b.y };
+        return .{ .x = a.x + b.x, .y = a.y + b.y };
     }
 
     pub fn diff(a: vec2, b: vec2) vec2 {
-        return vec2{ .x = a.x - b.x, .y = a.y - b.y };
+        return .{ .x = a.x - b.x, .y = a.y - b.y };
     }
 
     pub fn prod(a: vec2, b: vec2) vec2 {
-        return vec2{ .x = a.x * b.x, .y = a.y * b.y };
+        return .{ .x = a.x * b.x, .y = a.y * b.y };
     }
 
     pub fn equals(self: vec2, other: vec2) bool {
@@ -59,11 +59,11 @@ pub const vec2 = struct {
     }
 
     pub fn abs(self: vec2) vec2 {
-        return vec2{ .x = @abs(self.x), .y = @abs(self.y) };
+        return .{ .x = @abs(self.x), .y = @abs(self.y) };
     }
 
     pub fn quot(a: vec2, b: vec2) vec2 {
-        return vec2{ .x = a.x / b.x, .y = a.y / b.y };
+        return .{ .x = a.x / b.x, .y = a.y / b.y };
     }
 
     pub fn magnitude(self: vec2) f32 {
@@ -71,7 +71,7 @@ pub const vec2 = struct {
     }
 
     pub fn normalized(self: vec2) vec2 {
-        return vec2{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude() };
+        return .{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude() };
     }
 
     pub fn distance(self: vec2, other: vec2) f32 {
@@ -87,7 +87,7 @@ pub const vec2 = struct {
     }
 
     pub fn lerp(self: vec2, other: vec2, t: f32) vec2 {
-        return vec2{ .x = self.x + (other.x - self.x) * t, .y = self.y + (other.y - self.y) * t };
+        return .{ .x = self.x + (other.x - self.x) * t, .y = self.y + (other.y - self.y) * t };
     }
 
     pub fn angle(self: vec2, other: vec2) f32 {
@@ -95,15 +95,15 @@ pub const vec2 = struct {
     }
 
     pub fn max(self: vec2, other: vec2) vec2 {
-        return vec2{ .x = @max(self.x, other.x), .y = @max(self.y, other.y) };
+        return .{ .x = @max(self.x, other.x), .y = @max(self.y, other.y) };
     }
 
     pub fn min(self: vec2, other: vec2) vec2 {
-        return vec2{ .x = @min(self.x, other.x), .y = @min(self.y, other.y) };
+        return .{ .x = @min(self.x, other.x), .y = @min(self.y, other.y) };
     }
 
     pub fn perp(self: vec2) vec2 {
-        return vec2{ .x = -self.y, .y = self.x };
+        return .{ .x = -self.y, .y = self.x };
     }
 
     // Instance Methods
@@ -160,63 +160,63 @@ pub const vec3 = struct {
     
     // Constructor
     pub fn init(x: f32, y: f32, z: f32) vec3 {
-        return vec3{ .x = x, .y = y, .z = z };
+        return .{ .x = x, .y = y, .z = z };
     }
 
     // Static Methods
     pub fn up() vec3 {
-        return vec3{ .x = 0, .y = 1, .z = 0 };
+        return .{ .x = 0, .y = 1, .z = 0 };
     }
     pub fn down() vec3 {
-        return vec3{ .x = 0, .y = -1, .z = 0 };
+        return .{ .x = 0, .y = -1, .z = 0 };
     }
     pub fn left() vec3 {
-        return vec3{ .x = -1, .y = 0, .z = 0 };
+        return .{ .x = -1, .y = 0, .z = 0 };
     }
     pub fn right() vec3 {
-        return vec3{ .x = 1, .y = 0, .z = 0 };
+        return .{ .x = 1, .y = 0, .z = 0 };
     }
     pub fn forward() vec3 {
-        return vec3{ .x = 0, .y = 0, .z = 1 };
+        return .{ .x = 0, .y = 0, .z = 1 };
     }
     pub fn backward() vec3 {
-        return vec3{ .x = 0, .y = 0, .z = -1 };
+        return .{ .x = 0, .y = 0, .z = -1 };
     }
     pub fn zero() vec3 {
-        return vec3{ .x = 0, .y = 0, .z = 0 };
+        return .{ .x = 0, .y = 0, .z = 0 };
     }
     pub fn one() vec3 {
-        return vec3{ .x = 1, .y = 1, .z = 1 };
+        return .{ .x = 1, .y = 1, .z = 1 };
     }
     pub fn posinf() vec3 {
-        return vec3{ .x = std.math.inf(f32), .y = std.math.inf(f32), .z = std.math.inf(f32) };
+        return .{ .x = std.math.inf(f32), .y = std.math.inf(f32), .z = std.math.inf(f32) };
     }
     pub fn neginf() vec3 {
-        return vec3{ .x = -std.math.inf(f32), .y = -std.math.inf(f32), .z = -std.math.inf(f32) };
+        return .{ .x = -std.math.inf(f32), .y = -std.math.inf(f32), .z = -std.math.inf(f32) };
     }
     pub fn sum(a: vec3, b: vec3) vec3 {
-        return vec3{ .x = a.x + b.x, .y = a.y + b.y, .z = a.z + b.z };
+        return .{ .x = a.x + b.x, .y = a.y + b.y, .z = a.z + b.z };
     }
     pub fn diff(a: vec3, b: vec3) vec3 {
-        return vec3{ .x = a.x - b.x, .y = a.y - b.y, .z = a.z - b.z };
+        return .{ .x = a.x - b.x, .y = a.y - b.y, .z = a.z - b.z };
     }
     pub fn prod(a: vec3, b: vec3) vec3 {
-        return vec3{ .x = a.x * b.x, .y = a.y * b.y, .z = a.z * b.z };
+        return .{ .x = a.x * b.x, .y = a.y * b.y, .z = a.z * b.z };
     }
     pub fn equals(self: vec3, other: vec3) bool {
         return self.x == other.x and self.y == other.y and self.z == other.z;
     }
     pub fn abs(self: vec3) vec3 {
-        return vec3{ .x = @abs(self.x), .y = @abs(self.y), .z = @abs(self.z) };
+        return .{ .x = @abs(self.x), .y = @abs(self.y), .z = @abs(self.z) };
     }
     pub fn quot(a: vec3, b: vec3) vec3 {
-        return vec3{ .x = a.x / b.x, .y = a.y / b.y, .z = a.z / b.z };
+        return .{ .x = a.x / b.x, .y = a.y / b.y, .z = a.z / b.z };
     }
     pub fn magnitude(self: vec3) f32 {
         return @sqrt(self.x * self.x + self.y * self.y + self.z * self.z);
     }
     pub fn normalized(self: vec3) vec3 {
-        return vec3{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude(), .z = self.z / self.magnitude() };
+        return .{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude(), .z = self.z / self.magnitude() };
     }
     pub fn distance(self: vec3, other: vec3) f32 {
         return self.sub(other).magnitude();
@@ -225,14 +225,14 @@ pub const vec3 = struct {
         return self.x * other.x + self.y * other.y + self.z * other.z;
     }
     pub fn cross(self: vec3, other: vec3) vec3 {
-        return vec3{
+        return .{
             .x = self.y * other.z - self.z * other.y,
             .y = self.z * other.x - self.x * other.z,
             .z = self.x * other.y - self.y * other.x,
         };
     }
     pub fn lerp(self: vec3, other: vec3, t: f32) vec3 {
-        return vec3{
+        return .{
             .x = self.x + (other.x - self.x) * t,
             .y = self.y + (other.y - self.y) * t,
             .z = self.z + (other.z - self.z) * t,
@@ -242,13 +242,13 @@ pub const vec3 = struct {
         return std.math.acos(self.dot(other) / (self.magnitude() * other.magnitude()));
     }
     pub fn max(self: vec3, other: vec3) vec3 {
-        return vec3{ .x = @max(self.x, other.x), .y = @max(self.y, other.y), .z = @max(self.z, other.z) };
+        return .{ .x = @max(self.x, other.x), .y = @max(self.y, other.y), .z = @max(self.z, other.z) };
     }
     pub fn min(self: vec3, other: vec3) vec3 {
-        return vec3{ .x = @min(self.x, other.x), .y = @min(self.y, other.y), .z = @min(self.z, other.z) };
+        return .{ .x = @min(self.x, other.x), .y = @min(self.y, other.y), .z = @min(self.z, other.z) };
     }
     pub fn perp(self: vec3) vec3 {
-        return vec3{ .x = -self.y, .y = self.x, .z = self.z };
+        return .{ .x = -self.y, .y = self.x, .z = self.z };
     }
 
     // Instance Methods
@@ -307,63 +307,63 @@ pub const vec4 = struct {
 
     // Constructor
     pub fn init(x: f32, y: f32, z: f32, w: f32) vec4 {
-        return vec4{ .x = x, .y = y, .z = z, .w = w };
+        return .{ .x = x, .y = y, .z = z, .w = w };
     }
 
     // Static Methods
     pub fn up() vec4 {
-        return vec4{ .x = 0, .y = 1, .z = 0, .w = 0 };
+        return .{ .x = 0, .y = 1, .z = 0, .w = 0 };
     }
     pub fn down() vec4 {
-        return vec4{ .x = 0, .y = -1, .z = 0, .w = 0 };
+        return .{ .x = 0, .y = -1, .z = 0, .w = 0 };
     }
     pub fn left() vec4 {
-        return vec4{ .x = -1, .y = 0, .z = 0, .w = 0 };
+        return .{ .x = -1, .y = 0, .z = 0, .w = 0 };
     }
     pub fn right() vec4 {
-        return vec4{ .x = 1, .y = 0, .z = 0, .w = 0 };
+        return .{ .x = 1, .y = 0, .z = 0, .w = 0 };
     }
     pub fn forward() vec4 {
-        return vec4{ .x = 0, .y = 0, .z = 1, .w = 0 };
+        return .{ .x = 0, .y = 0, .z = 1, .w = 0 };
     }
     pub fn backward() vec4 {
-        return vec4{ .x = 0, .y = 0, .z = -1, .w = 0 };
+        return .{ .x = 0, .y = 0, .z = -1, .w = 0 };
     }
     pub fn zero() vec4 {
-        return vec4{ .x = 0, .y = 0, .z = 0, .w = 0 };
+        return .{ .x = 0, .y = 0, .z = 0, .w = 0 };
     }
     pub fn one() vec4 {
-        return vec4{ .x = 1, .y = 1, .z = 1, .w = 1 };
+        return .{ .x = 1, .y = 1, .z = 1, .w = 1 };
     }
     pub fn posinf() vec4 {
-        return vec4{ .x = std.math.inf(f32), .y = std.math.inf(f32), .z = std.math.inf(f32), .w = std.math.inf(f32) };
+        return .{ .x = std.math.inf(f32), .y = std.math.inf(f32), .z = std.math.inf(f32), .w = std.math.inf(f32) };
     }
     pub fn neginf() vec4 {
-        return vec4{ .x = -std.math.inf(f32), .y = -std.math.inf(f32), .z = -std.math.inf(f32), .w = -std.math.inf(f32) };
+        return .{ .x = -std.math.inf(f32), .y = -std.math.inf(f32), .z = -std.math.inf(f32), .w = -std.math.inf(f32) };
     }
     pub fn sum(a: vec4, b: vec4) vec4 {
-        return vec4{ .x = a.x + b.x, .y = a.y + b.y, .z = a.z + b.z, .w = a.w + b.w };
+        return .{ .x = a.x + b.x, .y = a.y + b.y, .z = a.z + b.z, .w = a.w + b.w };
     }
     pub fn diff(a: vec4, b: vec4) vec4 {
-        return vec4{ .x = a.x - b.x, .y = a.y - b.y, .z = a.z - b.z, .w = a.w - b.w };
+        return .{ .x = a.x - b.x, .y = a.y - b.y, .z = a.z - b.z, .w = a.w - b.w };
     }
     pub fn prod(a: vec4, b: vec4) vec4 {
-        return vec4{ .x = a.x * b.x, .y = a.y * b.y, .z = a.z * b.z, .w = a.w * b.w };
+        return .{ .x = a.x * b.x, .y = a.y * b.y, .z = a.z * b.z, .w = a.w * b.w };
     }
     pub fn equals(self: vec4, other: vec4) bool {
         return self.x == other.x and self.y == other.y and self.z == other.z and self.w == other.w;
     }
     pub fn abs(self: vec4) vec4 {
-        return vec4{ .x = @abs(self.x), .y = @abs(self.y), .z = @abs(self.z), .w = @abs(self.w) };
+        return .{ .x = @abs(self.x), .y = @abs(self.y), .z = @abs(self.z), .w = @abs(self.w) };
     }
     pub fn quot(a: vec4, b: vec4) vec4 {
-        return vec4{ .x = a.x / b.x, .y = a.y / b.y, .z = a.z / b.z, .w = a.w / b.w };
+        return .{ .x = a.x / b.x, .y = a.y / b.y, .z = a.z / b.z, .w = a.w / b.w };
     }
     pub fn magnitude(self: vec4) f32 {
         return @sqrt(self.x * self.x + self.y * self.y + self.z * self.z + self.w * self.w);
     }
     pub fn normalized(self: vec4) vec4 {
-        return vec4{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude(), .z = self.z / self.magnitude(), .w = self.w / self.magnitude() };
+        return .{ .x = self.x / self.magnitude(), .y = self.y / self.magnitude(), .z = self.z / self.magnitude(), .w = self.w / self.magnitude() };
     }
     pub fn distance(self: vec4, other: vec4) f32 {
         return self.sub(other).magnitude();
@@ -372,7 +372,7 @@ pub const vec4 = struct {
         return self.x * other.x + self.y * other.y + self.z * other.z + self.w * other.w;
     }
     pub fn lerp(self: vec4, other: vec4, t: f32) vec4 {
-        return vec4{
+        return .{
             .x = self.x + (other.x - self.x) * t,
             .y = self.y + (other.y - self.y) * t,
             .z = self.z + (other.z - self.z) * t,
@@ -383,13 +383,13 @@ pub const vec4 = struct {
         return std.math.acos(self.dot(other) / (self.magnitude() * other.magnitude()));
     }
     pub fn max(self: vec4, other: vec4) vec4 {
-        return vec4{ .x = @max(self.x, other.x), .y = @max(self.y, other.y), .z = @max(self.z, other.z), .w = @max(self.w, other.w) };
+        return .{ .x = @max(self.x, other.x), .y = @max(self.y, other.y), .z = @max(self.z, other.z), .w = @max(self.w, other.w) };
     }
     pub fn min(self: vec4, other: vec4) vec4 {
-        return vec4{ .x = @min(self.x, other.x), .y = @min(self.y, other.y), .z = @min(self.z, other.z), .w = @min(self.w, other.w) };
+        return .{ .x = @min(self.x, other.x), .y = @min(self.y, other.y), .z = @min(self.z, other.z), .w = @min(self.w, other.w) };
     }
     pub fn perp(self: vec4) vec4 {
-        return vec4{ .x = -self.y, .y = self.x, .z = self.z, .w = self.w };
+        return .{ .x = -self.y, .y = self.x, .z = self.z, .w = self.w };
     }
 
     // Instance Methods
